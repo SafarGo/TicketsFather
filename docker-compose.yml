@@ -1,0 +1,11 @@
+services:
+  kinobot:
+    build: .
+    env_file: .env
+    environment:
+      DB_PATH: /data/kinobot.db
+    volumes:
+      - kinobot-data:/data
+    restart: unless-stopped
+volumes:
+  kinobot-data:
